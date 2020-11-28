@@ -103,7 +103,7 @@ void save_bmpimg(unsigned char *bmpimg)
 	bmpinfoheader.biYPixelsPerMeter = 0x0B12;
 
 	/* capture.bmp 파일 생성 */
-	if((fp = fopen("capture.bmp", "wb")) == NULL) {
+	if((fp = fopen("static/capture.bmp", "wb")) == NULL) {
 		fprintf(stderr, "Error : Failed to open file...\n");
 		exit(EXIT_FAILURE);
 	}

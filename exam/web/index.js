@@ -8,7 +8,8 @@ const serialport = require("serialport");
 app.use('/', express.static(__dirname + '/static'));
 
 app.get('/capture', (req, res) => {
-  res.redirect('/');
+  const capture = spawn('../capture');
+  capture.on('exit', () => res.redirect('/'));
 });
 
 app.post('/7segment', (req, res) => {
