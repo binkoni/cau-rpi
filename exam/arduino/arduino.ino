@@ -92,6 +92,7 @@ void print7Seg(int num) {
       digitalWrite(6, HIGH);
       digitalWrite(7, HIGH);
       digitalWrite(8, HIGH);
+      break;
     case 9:
       digitalWrite(2, HIGH);
       digitalWrite(3, HIGH);
