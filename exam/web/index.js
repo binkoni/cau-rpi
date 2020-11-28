@@ -4,7 +4,9 @@ const app = express();
 const http = require('http').createServer(app);
 const spawn = require('child_process').spawn;
 const serialport = require("serialport");
+const sp = new serialport('/dev/ttyACM0', {baudRate: 9600});
 
+app.use(express.urlencoded({extended: true}));
 app.use('/', express.static(__dirname + '/static'));
 
 app.get('/capture', (req, res) => {
@@ -17,6 +19,7 @@ app.post('/7segment', (req, res) => {
 });
 
 app.post('/lcd', (req, res) => {
+  sp.write('LCD:' + req.body.val);
   res.redirect('/');
 });
 
