@@ -15,6 +15,7 @@ app.get('/capture', (req, res) => {
 });
 
 app.post('/7segment', (req, res) => {
+  sp.write('7SEG:' + req.body.val);
   res.redirect('/');
 });
 
